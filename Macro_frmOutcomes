@@ -1,0 +1,49 @@
+
+Private Sub btnOutcomeSubmit_Click()
+    Dim emptyRow As Long
+    Dim number As Long
+    ' Activate the Learning Outcomes worksheet
+    Sheet1.Activate
+    ' Find the first empty row
+    emptyRow = WorksheetFunction.CountA(Range("A:A")) + 1
+    ' Increment the learning outcome number
+    number = Cells(emptyRow - 1, 1) + 1
+    Cells(emptyRow, 1).Value = number
+    Cells(emptyRow, 2).Value = txtOutcome.Text
+    Cells(emptyRow, 3).Value = comboGA.Value
+    Cells(emptyRow, 4).Value = comboIL.Value
+End Sub
+
+Private Sub btnOutcomeClear_Click()
+    Call UserForm_Initialize
+End Sub
+
+Private Sub UserForm_Initialize()
+    ' Initialize boxes
+    txtOutcome.Value = ""
+    comboGA.Value = ""
+    comboIL.Value = ""
+    ' Graduate Attributes combo box
+    comboGA.Clear
+    With comboGA
+        .AddItem "3.1.1 A knowledge base for engineering"
+        .AddItem "3.1.2 Problem analysis"
+        .AddItem "3.1.3 Investigation"
+        .AddItem "3.1.4 Design"
+        .AddItem "3.1.5 Use of engineering tools"
+        .AddItem "3.1.6 Individual and team work"
+        .AddItem "3.1.7 Communication skills"
+        .AddItem "3.1.8 Professionalism"
+        .AddItem "3.1.9 Impact of engineering on society/environment"
+        .AddItem "3.1.10 Ethics and equity"
+        .AddItem "3.1.11 Economics and project management"
+        .AddItem "3.1.12 Life-long learning"
+    End With
+    ' Instruction Level combo box
+    comboIL.Clear
+    With comboIL
+        .AddItem "Introduced"
+        .AddItem "Developed"
+        .AddItem "Applied"
+    End With
+End Sub

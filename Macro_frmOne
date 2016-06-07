@@ -1,0 +1,27 @@
+
+Private Sub btnOneSubmit_Click()
+    Dim emptyCol As Long
+    Dim weight As Double
+    ' Activate the worksheet
+    Sheet3.Activate
+    ' Find last column increment
+    emptyCol = WorksheetFunction.CountA(Range("A6:X6")) + 1
+    Cells(6, emptyCol).Value = txtElement.Text
+    Cells(7, emptyCol).Value = txtValue.Value
+    Cells(8, emptyCol).Value = comboOutcome.Value
+End Sub
+
+Private Sub btnOneClear_Click()
+    Call UserForm_Initialize
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub UserForm_Initialize()
+    txtElement.Value = ""
+    txtValue.Value = ""
+    comboOutcome.Clear
+    comboOutcome.List = Worksheets("LO").Range("B8:B30").Value
+End Sub
