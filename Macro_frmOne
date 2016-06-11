@@ -9,6 +9,7 @@ Private Sub btnOneSubmit_Click()
     Cells(6, emptyCol).Value = txtElement.Text
     Cells(7, emptyCol).Value = txtValue.Value
     Cells(8, emptyCol).Value = comboOutcome.Value
+    Unload Me
 End Sub
 
 Private Sub btnOneClear_Click()

@@ -8,6 +8,7 @@ Private Sub btnGradeSubmit_Click()
     emptyCol = WorksheetFunction.CountA(Range("A6:X6")) + 1
     Cells(6, emptyCol).Value = txtGrade.Text
     Cells(7, emptyCol).Value = txtWeight.Value
+    Unload Me
 End Sub
 
 Private Sub btnGradeClear_Click()

@@ -12,6 +12,7 @@ Private Sub btnOutcomeSubmit_Click()
     Cells(emptyRow, 2).Value = txtOutcome.Text
     Cells(emptyRow, 3).Value = comboGA.Value
     Cells(emptyRow, 4).Value = comboIL.Value
+    Unload Me
 End Sub
 
 Private Sub btnOutcomeClear_Click()
