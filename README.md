@@ -40,3 +40,23 @@ The tool is based on the principle of "constructive alignment": i.e., the link b
 * Summary (Graduate Attributes Summary)
   + This worksheet provides a summary of the classroom assessments in the context of the 12 CEAB graduate attributes.
   + This is the worksheet that is read by GA_Summary.xlsm
+
+  #ICDT_Test
+  Integrated Course Design Tool
+
+  This is a "macro-free" version of the IDCT.
+
+  * LO (Learning Outcomes)
+    + learning outcomes entered directly
+    + drop-down boxes used to select graduate attributes and instruction levels
+  * Grades (Class Gradesheet)
+    + similar functionality to Gradesheet-GA-CI for the classlist and aggregate Grades
+  * One (First Detailed Grade Component)
+    + similar functionality to Gradesheet-GA-CI
+    + learning outcomes are selected from a drop-down rather than a Userform
+  * LO Summary (Learning Outcomes Summary)
+    + class performance summarized by learning outcomes
+    + capability added to easily hide learning outcome fields that are not used
+  * GA Summary (Graduate Attributes Summary)
+    + class performance by graduate attributes
+    + capability added to easily hide graduate attributes that are not used
