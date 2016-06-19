@@ -44,19 +44,24 @@ The tool is based on the principle of "constructive alignment": i.e., the link b
   #ICDT_Test
   Integrated Course Design Tool
 
-  This is a "macro-free" version of the IDCT.
+  This is a "macro-free" version of the IDCT. Although Gradesheet-GA-CI is relatively straight-forward, some instructors may be uncomfortable using a macro-enabled spreadsheet for grade collection. This macro-free version has all of the same functionality as Gradesheet-GA-CI, with the addition of a learning outcomes summary.
 
   * LO (Learning Outcomes)
-    + learning outcomes entered directly
-    + drop-down boxes used to select graduate attributes and instruction levels
+    + Learning outcomes are entered directly into the spreadsheet.
+    + Drop-down boxes are used to select graduate attributes and instruction levels.
+    + The learning outcome number is populated automatically: currently, a maximum of 24 learning outcomes can be entered.
   * Grades (Class Gradesheet)
-    + similar functionality to Gradesheet-GA-CI for the classlist and aggregate Grades
+    + This worksheet has similar functionality to Gradesheet-GA-CI for the class list and aggregate grades.
+    + Unlike Gradesheet-GA-CI, the worksheet is protected so that the automatic calculations cannot be accidentally altered.
+    + The instructor enters the name of the grade component (row 6), and the percentage weight (row 7). If the assessment is not being used for graduate attributes collection, the number of points for the assessment is entered directly in the left column ("Grade") along with the total (aggregate) score for each student on the assessment. The "Grade" column is automatically highlighted in green when this choice is made. If the assessment is chosen for graduate attributes collection, the instructor chooses the worksheet for the detailed assessment from the drop-down ("One-Four"). The "One-Four" column is automatically highlighted in green and is used for the grade calculation; the individual student grades for this assessment are now entered in the detailed grade component worksheet (e.g., worksheet "One").
   * One (First Detailed Grade Component)
-    + similar functionality to Gradesheet-GA-CI
-    + learning outcomes are selected from a drop-down rather than a Userform
+    + This worksheet has similar functionality to Gradesheet-GA-CI for the detailed grade component assessments.
+    + Unlike Gradesheet-GA-CI, the worksheet is protected so that the automatic calculations cannot be accidentally altered.
+    + The instructor enters the grade elements (row 6), and number of points for the grade elements (row 7). The link between grade elements and learning outcomes are made using a drop-down (row 8) rather than a Userform.
+    + The learning outcomes drop-down is automatically populated from the list of learning outcomes in the "LO" worksheet, and once selected, is automatically linked to the graduate attribute and the instruction level specified in "LO".
   * LO Summary (Learning Outcomes Summary)
-    + class performance summarized by learning outcomes
-    + capability added to easily hide learning outcome fields that are not used
+    + This worksheet summarizes the overall class performance by course learning outcome.
+    + The capability has been added to easily hide learning outcome fields that are not used (the "groups" on the left column).
   * GA Summary (Graduate Attributes Summary)
-    + class performance by graduate attributes
-    + capability added to easily hide graduate attributes that are not used
+    + This worksheet summarizes the overall class performance by graduate attribute.
+    + The capability has been added to easily hide graduate attribute fields that are not used (the "groups" on the left column).
