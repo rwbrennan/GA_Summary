@@ -1,0 +1,97 @@
+Sub Read_External_Workbook()
+
+    ''''' This macro allows the ICDT Summary data to be copied into the current (active) worksheet
+    ''''' 1. Save ICDT file with the name "Gradesheet.xlsx" into the current directory
+    ''''' 2. The macro will copy all of the data from the "Summary" worksheet to the active worksheet
+
+    '''''Define Object for Target Workbook
+    Dim Target_Workbook As Workbook
+    Dim Source_Workbook As Workbook
+    Dim Target_Path As String
+    '''''Define Index Variables
+    Dim i As Integer
+    Dim j As Integer
+
+    '''''Assign the Workbook File Name along with its Path
+    '''''Change path of the Target File name
+    Target_Path = ThisWorkbook.Path & ":Gradesheet.xlsx"
+    Set Target_Workbook = Workbooks.Open(Target_Path)
+    Set Source_Workbook = ThisWorkbook
+
+    '''''Read Course Information Data from Target File
+    For i = 2 To 3
+        Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, 1)
+        Source_Workbook.ActiveSheet.Cells(i, 1) = Target_Data
+    Next i
+
+    '''''Read Performance Level Data from Target File
+    '''''---- Title (first assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(5, 2) & " for " & Target_Workbook.Sheets("PL").Cells(5, 4) & ":"
+    Source_Workbook.ActiveSheet.Cells(5, 1) = Target_Data
+    '''''---- First Range (first assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(6, 2) & ":"
+    Source_Workbook.ActiveSheet.Cells(6, 2) = Target_Data
+    Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(6, 3)) & "% <= P"
+    Source_Workbook.ActiveSheet.Cells(6, 3) = Target_Data
+    '''''---- Second-Fourth Ranges (first assessment)
+    For i = 7 To 9
+        Target_Data = Target_Workbook.Sheets("PL").Cells(i, 2) & ":"
+        Source_Workbook.ActiveSheet.Cells(i, 2) = Target_Data
+        Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 3)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 3))
+        Source_Workbook.ActiveSheet.Cells(i, 3) = Target_Data
+    Next i
+    '''''---- Title (second assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(5, 7) & " for " & Target_Workbook.Sheets("PL").Cells(5, 9) & ":"
+    Source_Workbook.ActiveSheet.Cells(5, 5) = Target_Data
+    '''''---- First Range (second assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(6, 7) & ":"
+    Source_Workbook.ActiveSheet.Cells(6, 6) = Target_Data
+    Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(6, 8)) & "% <= P"
+    Source_Workbook.ActiveSheet.Cells(6, 7) = Target_Data
+    '''''---- Second-Fourth Ranges (second assessment)
+    For i = 7 To 9
+        Target_Data = Target_Workbook.Sheets("PL").Cells(i, 7) & ":"
+        Source_Workbook.ActiveSheet.Cells(i, 6) = Target_Data
+        Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 8)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 8))
+        Source_Workbook.ActiveSheet.Cells(i, 7) = Target_Data
+    Next i
+    '''''---- Title (third assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(12, 2) & " for " & Target_Workbook.Sheets("PL").Cells(12, 4) & ":"
+    Source_Workbook.ActiveSheet.Cells(11, 1) = Target_Data
+    '''''---- First Range (third assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(13, 2) & ":"
+    Source_Workbook.ActiveSheet.Cells(12, 2) = Target_Data
+    Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(13, 3)) & "% <= P"
+    Source_Workbook.ActiveSheet.Cells(12, 3) = Target_Data
+    '''''---- Second-Fourth Ranges (third assessment)
+    For i = 14 To 17
+        Target_Data = Target_Workbook.Sheets("PL").Cells(i, 2) & ":"
+        Source_Workbook.ActiveSheet.Cells(i - 1, 2) = Target_Data
+        Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 3)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 3))
+        Source_Workbook.ActiveSheet.Cells(i - 1, 3) = Target_Data
+    Next i
+    '''''---- Title (fourth assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(12, 7) & " for " & Target_Workbook.Sheets("PL").Cells(12, 9) & ":"
+    Source_Workbook.ActiveSheet.Cells(11, 5) = Target_Data
+    '''''---- First Range (fourth assessment)
+    Target_Data = Target_Workbook.Sheets("PL").Cells(13, 7) & ":"
+    Source_Workbook.ActiveSheet.Cells(12, 6) = Target_Data
+    Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(13, 8)) & "% <= P"
+    Source_Workbook.ActiveSheet.Cells(12, 7) = Target_Data
+    '''''---- Second-Fourth Ranges (fourth assessment)
+    For i = 14 To 17
+        Target_Data = Target_Workbook.Sheets("PL").Cells(i, 7) & ":"
+        Source_Workbook.ActiveSheet.Cells(i - 1, 6) = Target_Data
+        Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 8)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 8))
+        Source_Workbook.ActiveSheet.Cells(i - 1, 7) = Target_Data
+    Next i
+
+    '''''Close Target Workbook
+    Source_Workbook.Save
+    Target_Workbook.Save
+    Target_Workbook.Close False
+
+    '''''Process Completed
+    MsgBox "Worsheet Populated"
+
+End Sub
