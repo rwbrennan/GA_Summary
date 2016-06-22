@@ -33,7 +33,6 @@ Sub Read_External_Workbook()
         Source_Workbook.ActiveSheet.Cells(i - 1, 1) = Target_Data
     Next i
 
-
     '''''Read Performance Level Data from Target File
     '''''---- Title (first assessment)
     Target_Data = Target_Workbook.Sheets("PL").Cells(5, 2) & " for " & Target_Workbook.Sheets("PL").Cells(5, 4) & ":"
@@ -44,7 +43,7 @@ Sub Read_External_Workbook()
     Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(6, 3)) & "% <= P"
     Source_Workbook.ActiveSheet.Cells(34, 3) = Target_Data
     '''''---- Second-Fourth Ranges (first assessment)
-    For i = 7 To 9
+    For i = 7 To 10
         Target_Data = Target_Workbook.Sheets("PL").Cells(i, 2) & ":"
         Source_Workbook.ActiveSheet.Cells(i + 28, 2) = Target_Data
         Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 3)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 3))
@@ -59,7 +58,7 @@ Sub Read_External_Workbook()
     Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(6, 8)) & "% <= P"
     Source_Workbook.ActiveSheet.Cells(34, 7) = Target_Data
     '''''---- Second-Fourth Ranges (second assessment)
-    For i = 7 To 9
+    For i = 7 To 10
         Target_Data = Target_Workbook.Sheets("PL").Cells(i, 7) & ":"
         Source_Workbook.ActiveSheet.Cells(i + 28, 6) = Target_Data
         Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 8)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 8))
@@ -94,6 +93,92 @@ Sub Read_External_Workbook()
         Source_Workbook.ActiveSheet.Cells(i + 28, 6) = Target_Data
         Target_Data = CStr(100 * Target_Workbook.Sheets("PL").Cells(i, 8)) & "% <= P < " & CStr(100 * Target_Workbook.Sheets("PL").Cells(i - 1, 8))
         Source_Workbook.ActiveSheet.Cells(i + 28, 7) = Target_Data
+    Next i
+
+    '''''Read Assessment Data from Target File
+    '''''---- 3.1.1
+    For i = 9 To 12
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.2
+    For i = 18 To 21
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.3
+    For i = 27 To 30
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.4
+    For i = 36 To 39
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.5
+    For i = 45 To 48
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.6
+    For i = 54 To 57
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.7
+    For i = 63 To 66
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.8
+    For i = 72 To 75
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.9
+    For i = 81 To 84
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.10
+    For i = 90 To 93
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.11
+    For i = 99 To 102
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
+    Next i
+    '''''---- 3.1.12
+    For i = 108 To 111
+        For j = 1 To 7
+            Target_Data = Target_Workbook.Sheets("GA Summary").Cells(i, j)
+            Source_Workbook.ActiveSheet.Cells(i + 44, j) = Target_Data
+        Next j
     Next i
 
     '''''Close Target Workbook
