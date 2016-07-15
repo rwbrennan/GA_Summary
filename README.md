@@ -59,6 +59,12 @@ The tool is based on the principle of "constructive alignment": i.e., the link b
     + Unlike Gradesheet-GA-CI, the worksheet is protected so that the automatic calculations cannot be accidentally altered.
     + The instructor enters the grade elements (row 6), and number of points for the grade elements (row 7). The link between grade elements and learning outcomes are made using a drop-down (row 8) rather than a Userform.
     + The learning outcomes drop-down is automatically populated from the list of learning outcomes in the "LO" worksheet, and once selected, is automatically linked to the graduate attribute and the instruction level specified in "LO".
+  * Cutoffs (individual percentage to letter grade cutoffs)
+    + This worksheet is used to specify the percentage to letter grade conversions for individual student grades.
+    + Two approaches can be used to set the grade cutoffs: (1) enter a grade split percentage (the percentage to letter grade conversion are then calculated automatically), or (2) enter individual grade splits manually (this requires the uses to over-write the formulae)
+  * PL (Performance Levels)
+    + This worksheet is used to specify the performance levels for each detailed assessment.
+    + The name of the assessment is automatically populated above the performance level.
   * LO Summary (Learning Outcomes Summary)
     + This worksheet summarizes the overall class performance by course learning outcome.
     + The capability has been added to easily hide learning outcome fields that are not used (the "groups" on the left column).
